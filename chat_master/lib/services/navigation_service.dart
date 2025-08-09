@@ -1,0 +1,27 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class NavigationService {
+  static GlobalKey<NavigatorState> navigatorKey = new GlobalKey();
+  void removeAndNavigateToRoute(String _route) {
+    navigatorKey.currentState?.popAndPushNamed(_route);
+  }
+
+  void navigateToRoute(String _route) {
+    navigatorKey.currentState?.pushNamed(_route);
+  }
+
+  void navigateToPage(Widget _page) {
+    navigatorKey.currentState?.push(
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return _page;
+        },
+      ),
+    );
+  }
+
+  void goBack() {
+    navigatorKey.currentState?.pop();
+  }
+}
