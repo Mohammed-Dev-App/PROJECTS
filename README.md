@@ -1,4 +1,4 @@
-These project Written by Flutter.
+These projects Written by Flutter.
 Some projects before run You need to 
 setup project config because some projects used
 firebase like chat projects,
